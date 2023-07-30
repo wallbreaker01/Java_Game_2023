@@ -72,6 +72,34 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
     }
 
 //here the jump code will go
+    public void jump()
+    {
+        if(gameOver)
+        {
+            bird = new Rectangle(WIDTH/2 - 10,HEIGHT/2 - 10,20,20);
+            columns.clear();
+            yMotion = 0;
+            score = 0;
+
+            addColumn(true);
+            addColumn(true);
+            addColumn(true);
+            addColumn(true);
+            gameOver = false;
+        }
+        if(!started)
+        {
+            started = true;
+        }
+        else if(!gameOver)
+        {
+            if(yMotion > 0)
+            {
+                yMotion = 0;
+            }
+            yMotion -=10;
+        }
+    }
 
     public void actionPerformed(ActionEvent e)
     {
