@@ -21,23 +21,23 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
     public FlappyBird()
     {
         JFrame jframe = new JFrame();
-        Timer timer = new Timer(20,this);
+        Timer timer = new Timer(20,this); //game speed
 
-        renderer = new Renderer();
+        renderer = new Renderer(); 
         rand = new Random();
 
         jframe.add(renderer);
         jframe.setTitle("Flappy Bird");
-        jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //close app
         jframe.setSize(WIDTH,HEIGHT);
 
-        jframe.addMouseListener(this);
-        jframe.addKeyListener(this);
+        jframe.addMouseListener(this); //mouse inout
+        jframe.addKeyListener(this); //key input
 
-        jframe.setResizable(false);
+        jframe.setResizable(false); //window size change
         jframe.setVisible(true);
 
-        bird = new Rectangle(WIDTH/2 - 10,HEIGHT/2 - 10,20,20);
+        bird = new Rectangle(WIDTH/2 - 10,HEIGHT/2 - 10,20,20); //bird size
         columns = new ArrayList<Rectangle>();
 
         addColumn(true);
@@ -71,7 +71,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
         g.fillRect(column.x, column.y, column.width,column.height);
     }
 
-//here the jump code will go
+    //here the jump code will go
     public void jump()
     {
         if(gameOver)
