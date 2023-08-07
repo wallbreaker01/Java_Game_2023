@@ -23,7 +23,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
         JFrame jframe = new JFrame();
         Timer timer = new Timer(20,this); //game speed
 
-        renderer = new Renderer(); 
+        renderer = new Renderer();
         rand = new Random();
 
         jframe.add(renderer);
@@ -103,7 +103,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
 
     public void actionPerformed(ActionEvent e)
     {
-        int speed = 10;
+        int speed = 10; //game speed
 
         ticks++;
         if(started)
@@ -198,7 +198,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener
         }
 
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial",1,100));
+        g.setFont(new Font("Times New Roman",1,100));
 
         if(!started)
         {
